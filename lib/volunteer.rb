@@ -55,10 +55,6 @@ class Volunteer
     DB.exec("DELETE FROM volunteers WHERE id = #{@id};")
   end
 
-  def self.clear
-    DB.exec("DELETE FROM volunteers *;")
-  end
-
   def self.find_by_project(prj_id)
     volunteers = []
     returned_volunteers = DB.exec("SELECT * FROM volunteers WHERE project_id = #{prj_id};")
