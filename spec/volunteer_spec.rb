@@ -62,4 +62,6 @@ describe Volunteer do
       expect(volunteer.name).to eq 'Hugh Alexander Goodwin'
     end
   end
+
+  
 end

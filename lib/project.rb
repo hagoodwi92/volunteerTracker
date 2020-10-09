@@ -1,3 +1,5 @@
+require('pry')
+
 class Project
   attr_reader :id
   attr_accessor :title
@@ -40,7 +42,7 @@ class Project
     @title = title
     DB.exec("UPDATE projects SET title = '#{@title}' WHERE id = #{@id};")
   end
-
+  
   def delete
     DB.exec("DELETE FROM projects WHERE id = #{@id};")
     DB.exec("DELETE FROM volunteers WHERE project_id = #{@id};") # new code

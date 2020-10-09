@@ -78,6 +78,3 @@ delete ('/projects/:id/volunteers/:volunteer_id') do
   @project = Project.find(params[:id].to_i())
   erb(:project)
 end
-
-
-
