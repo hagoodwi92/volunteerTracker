@@ -1,8 +1,6 @@
 <h1>Project Tracker</h1>
 
-<h3>Current Projects</h3>
-
-<h1>Add a New Project</h1>
+<h3>Add a New Project</h3>
 
 <form action="/projects" method="post">
   <div class="form-group">
@@ -11,7 +9,8 @@
   </div>
   <button type="submit" class="btn">Create Project</button>
 </form>
-
+<br>
+<h3>Current Projects</h3>
 <% if @projects.any? %>
   <ul>
     <% @projects.each do |project| %>
