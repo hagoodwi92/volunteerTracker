@@ -42,6 +42,7 @@ class Project
 
   def update(title)
     @title = title
+    binding.pry
     DB.exec("UPDATE projects SET title = '#{@title}' WHERE id = #{@id};")
   end
 
@@ -51,6 +52,6 @@ class Project
   end
 
   def volunteers
-    
+    Volunteer.find_by_project(self.id)
   end
 end

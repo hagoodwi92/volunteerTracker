@@ -59,13 +59,13 @@ class Volunteer
     DB.exec("DELETE FROM volunteers *;")
   end
 
-  def self.find_by_album(alb_id)
+  def self.find_by_project(prj_id)
     volunteers = []
-    returned_volunteers = DB.exec("SELECT * FROM volunteers WHERE project_id = #{alb_id};")
+    returned_volunteers = DB.exec("SELECT * FROM volunteers WHERE project_id = #{prj_id};")
     returned_volunteers.each() do |volunteer|
       name = volunteer.fetch("name")
       id = volunteer.fetch("id").to_i
-      volunteers.push(Volunteer.new({:name => name, :project_id => alb_id, :id => id}))
+      volunteers.push(Volunteer.new({:name => name, :project_id => prj_id, :id => id}))
     end
     volunteers
   end
